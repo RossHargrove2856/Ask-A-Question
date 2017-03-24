@@ -1,0 +1,22 @@
+<div>
+    <h1>Register</h1>
+    <form ng-submit="UC.create(UC.newUser)">
+        <p><label>Name</label>
+        <input type="text" ng-model="UC.newUser.name"></p>
+        <p><label>Email</label>
+        <input type="email" ng-model="UC.newUser.email"></p>
+        <p><label>Password</label>
+        <input type="password" name="UC.newUser.password"></p>
+        <p><label>Confirm Password</label>
+        <input type="password" name="UC.password_confirm"></p>
+        <input type="submit" name="submit" value="Register">
+    </form>
+    <h1>Login</h1>
+    <form ng-submit="UC.login(UC.loggedUser)">
+        <p><label>Email</label>
+        <input type="email" ng-model="UC.loggedUser.email"></p>
+        <p><label>Password</label>
+        <input type="password" name="UC.loggedUser.password"></p>
+        <input type="submit" name="submit" value="Login">
+    </form>
+</div>

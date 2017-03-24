@@ -1,0 +1,17 @@
+{
+  "name": "MEAN_belt",
+  "authors": [
+    "RossHargrove2856 <rhargrove05@hotmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

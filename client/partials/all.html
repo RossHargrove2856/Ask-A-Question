@@ -1,0 +1,23 @@
+<div>
+    <a href="#!/partials/polls/new">Create a New Poll</a>
+    <a href="/partials/polls/new">Logout</a>
+    <h1>Current Polls:</h1>
+    <form>
+        <input type="text" placeholder="Search" ng-model="survey_search">
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <td>Name</td>
+                <td>Survey Question</td>
+                <td>Date Posted</td>
+                <td>Action</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="poll in PC.polls | filter: survey_search">
+                <td>{{ poll.author.name }}</td><td><a href="#!/polls/{{ poll._id }}">{{ poll.question }}</td><td>{{ poll.updatedAt }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

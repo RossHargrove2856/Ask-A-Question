@@ -1,0 +1,17 @@
+<div>
+    <a href="#!/partials/polls">Cancel</a>
+    <h1>Put the question and options here:</h1>
+    <form ng-submit="PC.create(PC.newPoll)">
+        <p><label>Question:</label>
+        <input type="text" ng-model="PC.newPoll.question"></p>
+        <p><label>Option 1:</label>
+        <input type="text" ng-model="PC.newPoll.options.option1"></p>
+        <p><label>Option 2:</label>
+        <input type="text" ng-model="PC.newPoll.options.option2"></p>
+        <p><label>Option 3:</label>
+        <input type="text" ng-model="PC.newPoll.options.option3"></p>
+        <p><label>Option 4:</label>
+        <input type="text" ng-model="PC.newPoll.options.option4"></p>
+        <input type="submit" name="submit" value="Create Poll">
+    </form>
+</div>

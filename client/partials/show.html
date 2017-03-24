@@ -1,0 +1,19 @@
+<div>
+    <a href="#!/partials/polls/new">Go To Polls</a>
+    <h1>{{ poll.question }}</h1>
+    <h4>Click the vote button to choose one</h4>
+    <table>
+        <thead>
+            <tr>
+                <td>Option</td>
+                <td>Current Count of Votes</td>
+                <td>Action</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="options in PC.poll.options | filter: survey_search">
+                <td>{{ options.option }}</td><td><{{ options.vote }}</td><td><form></form></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
