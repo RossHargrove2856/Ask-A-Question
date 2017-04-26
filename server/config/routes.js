@@ -1,4 +1,4 @@
-console.log("User Routes");
+console.log("Loading routes...");
 var users = require("../controllers/users");
 var polls = require("../controllers/polls");
 module.exports = function(app) {
@@ -17,7 +17,10 @@ module.exports = function(app) {
     app.get("/polls/:id", function(req, res) {
         polls.show(req, res);
     });
-    app.delete("/polls/:id", function(req, res) {
+    app.put("/polls/:id", function(req, res) {
+        polls.vote(req, res);
+    });
+    app.post("/polls/:id", function(req, res) {
         polls.delete(req, res);
     });
 }

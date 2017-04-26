@@ -1,18 +1,23 @@
-<div>
-    <a href="#!/partials/polls/new">Go To Polls</a>
-    <h1>{{ poll.question }}</h1>
-    <h4>Click the vote button to choose one</h4>
+<div ng-controller="userController as UC" ng-init="PC.show()">
+    <a href="#!/polls">Go To Polls</a>
+    <h2>{{ PC.poll.question }}</h2>
+    <p>by {{ PC.poll.author.name }}</p>
+    <h5>Click the vote button to choose one</h5>
     <table>
         <thead>
             <tr>
-                <td>Option</td>
-                <td>Current Count of Votes</td>
-                <td>Action</td>
+                <th>Option</th>
+                <th>Current Votes</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="options in PC.poll.options | filter: survey_search">
-                <td>{{ options.option }}</td><td><{{ options.vote }}</td><td><form></form></td>
+            <tr ng-repeat="options in PC.poll.options">
+                <td>{{ options.option }}</td>
+                <td>{{ options.vote }}</td>
+                <td>
+                    <button ng-click="PC.vote(options)">Vote</button>
+                </td>
             </tr>
         </tbody>
     </table>

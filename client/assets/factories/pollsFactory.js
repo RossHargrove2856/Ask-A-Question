@@ -4,23 +4,24 @@ app.factory("pollsFactory", ["$http", function($http) {
         $http.get("/polls").then(callback);
     }
     factory.show = function(id, callback) {
-        $http.get(`/polls/${ id }`).then(function(data){
-            // console.log(data.data);
-            if(typeof(callback) == "function") {
-                callback(data.data);
-            }
-        });
+        $http.get(`/polls/${ id }`).then(callback);
     }
-    factory.create = function(newPoll, callback) {
+    factory.create = function(addPoll, callback) {
+        var newPoll = {};
+        newPoll.author = addPoll.author;
+        newPoll.question = addPoll.question;
+        newPoll.options = [];
+        newPoll.options.push({ option: addPoll.option1 });
+        newPoll.options.push({ option: addPoll.option2 });
+        newPoll.options.push({ option: addPoll.option3 });
+        newPoll.options.push({ option: addPoll.option4 });
         $http.post("/polls", newPoll).then(callback);
     }
-    factory.delete = function(id, callack) {
-        $http.delete(`/polls/${ id }`).then(function(data){
-            console.log(data.data);
-            if(typeof(callback) == "function") {
-                callback(data.data);
-            }
-        });
+    factory.vote = function(option, id, callback) {
+        $http.put(`polls/${ id }`, option).then(callback);
+    }
+    factory.destroy = function(id, callback) {
+        $http.post(`/polls/${ id }`).then(callback);
     }
     return factory;
 }])

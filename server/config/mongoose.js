@@ -1,3 +1,5 @@
+console.log("Connecting to the database...");
+
 var mongoose = require("mongoose");
 var fs = require("fs");
 var path = require("path");

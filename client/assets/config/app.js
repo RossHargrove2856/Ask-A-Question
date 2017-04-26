@@ -1,4 +1,4 @@
-var app = angular.module("app", ["ngRoute"]);
+var app = angular.module("app", ["ngRoute", "ngCookies"]);
 
 app.config(function($routeProvider) {
     $routeProvider
@@ -19,6 +19,6 @@ app.config(function($routeProvider) {
         controller: "pollController as PC"
     })
     .otherwise({
-        redirectTo: "/polls"
+        redirectTo: "/"
     })
 })

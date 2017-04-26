@@ -1,3 +1,5 @@
+console.log("Loading user model...");
+
 var mongoose = require("mongoose");
     bcrypt = require("bcryptjs");
 

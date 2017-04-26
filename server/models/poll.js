@@ -1,3 +1,5 @@
+console.log("Loading poll model...");
+
 var mongoose = require("mongoose");
 
 var PollSchema = new mongoose.Schema({

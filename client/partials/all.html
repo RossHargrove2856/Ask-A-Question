@@ -1,22 +1,25 @@
-<div>
-    <a href="#!/partials/polls/new">Create a New Poll</a>
-    <a href="/partials/polls/new">Logout</a>
+<div ng-controller="userController as UC">
+    <a href="#!/polls/new">Create a New Poll</a>
+    <button ng-click="UC.logout()">Logout</button>
     <h1>Current Polls:</h1>
     <form>
-        <input type="text" placeholder="Search" ng-model="survey_search">
+        <input type="text" placeholder="Search Polls" ng-model="survey_search">
     </form>
     <table>
         <thead>
             <tr>
-                <td>Name</td>
-                <td>Survey Question</td>
-                <td>Date Posted</td>
-                <td>Action</td>
+                <th>Name</th>
+                <th>Survey Question</th>
+                <th>Date Posted</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
             <tr ng-repeat="poll in PC.polls | filter: survey_search">
-                <td>{{ poll.author.name }}</td><td><a href="#!/polls/{{ poll._id }}">{{ poll.question }}</td><td>{{ poll.updatedAt }}</td>
+                <td>{{ poll.author.name }}</td>
+                <td><a href="#!/polls/{{ poll._id }}">{{ poll.question }}</a></td>
+                <td>{{ poll.updatedAt | date: yyyy/MM/dd }}</td>
+                <td><button ng-if="PC.user == poll.author._id" ng-click="PC.destroy(poll._id)">Delete</button></td>
             </tr>
         </tbody>
     </table>
