@@ -1,19 +1,36 @@
 <div ng-controller="userController as UC">
-    <a href="#!/polls">Cancel</a>
-    <h1>Put the question and options here:</h1>
-    <p ng-if="PC.new_errors">{{ new_errors }}</p>
-    <form ng-submit="PC.create(PC.addPoll)">
-        <input type="hidden" ng.model="PC.addPoll.author" value="{{ UC.logged_user._id }}">
-        <p><label>Question:</label>
-        <input type="text" ng-model="PC.addPoll.question"></p>
-        <p><label>Option 1:</label>
-        <input type="text" id="1" ng-model="PC.addPoll.option1"></p>
-        <p><label>Option 2:</label>
-        <input type="text" id="2" ng-model="PC.addPoll.option2"></p>
-        <p><label>Option 3:</label>
-        <input type="text" id="3" ng-model="PC.addPoll.option3"></p>
-        <p><label>Option 4:</label>
-        <input type="text" id="4" ng-model="PC.addPoll.option4"></p>
-        <input type="submit" name="submit" value="Create Poll">
-    </form>
+    <nav>
+        <div class="nav-wrapper blue darken-3">
+            <a href="#" class="brand-logo">Ask-A-Question</a>
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+            <ul id="nav-mobile" class="right">
+                <li><a href="#!/polls">Dashboard</a></li>
+                <li><a ng-click="UC.logout()">Logout</a></li>
+            </ul>
+            <ul class="side-nav" id="mobile-demo">
+                <li><a href="#!/polls">Dashboard</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="card-panel grey lighten-3">
+            <h4>Put the question and options here:</h4>
+            <p ng-if="PC.new_errors">{{ new_errors }}</p>
+            <form ng-submit="PC.create(PC.addPoll)">
+                <input type="hidden" ng.model="PC.addPoll.author" value="{{ UC.logged_user._id }}">
+                <p><label>Question:</label>
+                <input type="text" ng-model="PC.addPoll.question"></p>
+                <p><label>Option 1:</label>
+                <input type="text" id="1" ng-model="PC.addPoll.option1"></p>
+                <p><label>Option 2:</label>
+                <input type="text" id="2" ng-model="PC.addPoll.option2"></p>
+                <p><label>Option 3:</label>
+                <input type="text" id="3" ng-model="PC.addPoll.option3"></p>
+                <p><label>Option 4:</label>
+                <input type="text" id="4" ng-model="PC.addPoll.option4"></p>
+                <input type="submit" name="submit" value="Create Poll" class="waves-effect waves-light btn blue darken-3">
+            </form>
+        </div>
+    </div>
 </div>

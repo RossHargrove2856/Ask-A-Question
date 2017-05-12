@@ -1,23 +1,27 @@
-<div>
+<div class="container">
     <p ng-if="UC.logged_errors">{{ UC.logged_errors }}</p>
-    <h1>Register</h1>
-    <form ng-submit="UC.create(UC.newUser, UC.password_confirm)">
-        <p><label>Name</label>
-        <input type="text" ng-model="UC.newUser.name"></p>
-        <p><label>Email</label>
-        <input type="email" ng-model="UC.newUser.email"></p>
-        <p><label>Password</label>
-        <input type="password" ng-model="UC.newUser.password"></p>
-        <p><label>Confirm Password</label>
-        <input type="password" ng-model="UC.password_confirm"></p>
-        <input type="submit" name="submit" value="Register">
-    </form>
-    <h1>Login</h1>
-    <form ng-submit="UC.login(UC.loggedUser)">
-        <p><label>Email</label>
-        <input type="email" ng-model="UC.loggedUser.email"></p>
-        <p><label>Password</label>
-        <input type="password" ng-model="UC.loggedUser.password"></p>
-        <input type="submit" name="submit" value="Login">
-    </form>
+    <div class="card-panel grey lighten-3">
+        <h2>Register</h2>
+        <form ng-submit="UC.create(UC.newUser, UC.password_confirm)">
+            <p><label>Name</label>
+            <input type="text" ng-model="UC.newUser.name"></p>
+            <p><label>Email</label>
+            <input type="email" ng-model="UC.newUser.email"></p>
+            <p><label>Password</label>
+            <input type="password" ng-model="UC.newUser.password"></p>
+            <p><label>Confirm Password</label>
+            <input type="password" ng-model="UC.password_confirm"></p>
+            <input type="submit" class="btn waves-effect waves-light blue darken-3" name="submit" value="Register">
+        </form>
+    </div>
+    <div class="card-panel grey lighten-3">
+        <h2>Login</h2>
+        <form ng-submit="UC.login(UC.loggedUser)">
+            <p><label>Email</label>
+            <input type="email" ng-model="UC.loggedUser.email"></p>
+            <p><label>Password</label>
+            <input type="password" ng-model="UC.loggedUser.password"></p>
+            <input type="submit" class="btn waves-effect waves-light blue darken-3" name="submit" value="Login">
+        </form>
+    </div>
 </div>

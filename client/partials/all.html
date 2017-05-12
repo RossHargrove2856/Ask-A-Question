@@ -1,26 +1,49 @@
 <div ng-controller="userController as UC">
-    <a href="#!/polls/new">Create a New Poll</a>
-    <button ng-click="UC.logout()">Logout</button>
-    <h1>Current Polls:</h1>
-    <form>
-        <input type="text" placeholder="Search Polls" ng-model="survey_search">
-    </form>
-    <table>
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Survey Question</th>
-                <th>Date Posted</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr ng-repeat="poll in PC.polls | filter: survey_search">
-                <td>{{ poll.author.name }}</td>
-                <td><a href="#!/polls/{{ poll._id }}">{{ poll.question }}</a></td>
-                <td>{{ poll.updatedAt | date: yyyy/MM/dd }}</td>
-                <td><button ng-if="PC.user == poll.author._id" ng-click="PC.destroy(poll._id)">Delete</button></td>
-            </tr>
-        </tbody>
-    </table>
+    <nav>
+        <div class="nav-wrapper blue darken-3">
+            <a href="#" class="brand-logo">Ask-A-Question</a>
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+            <ul id="nav-mobile" class="right">
+                <li><a href="#!/polls/new">New Poll</a></li>
+                <li><a ng-click="UC.logout()">Logout</a></li>
+            </ul>
+            <ul class="side-nav" id="mobile-demo">
+                <li><a href="#!/polls/new">New Poll</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row card-panel grey lighten-3">
+            <div class="col s5">
+                <h4 class="light">Current Polls</h4>
+            </div>
+            <div class="col s4 offset-s3">
+                <form>
+                    <div class="input-field">
+                        <input id="search" type="search" placeholder="Search Polls" ng-model="survey_search">
+                        <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <table class="centered card-panel grey lighten-3">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Survey Question</th>
+                    <th>Date Posted</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="poll in PC.polls | filter: survey_search">
+                    <td>{{ poll.author.name }}</td>
+                    <td><a href="#!/polls/{{ poll._id }}">{{ poll.question }}</a></td>
+                    <td>{{ poll.updatedAt | date: yyyy/MM/dd }}</td>
+                    <td><button ng-if="PC.user == poll.author._id" ng-click="PC.destroy(poll._id)" class="waves-effect waves-light btn blue darken-3"><i class="material-icons left">delete</i>Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
