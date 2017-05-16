@@ -1,6 +1,10 @@
 console.log("Loading routes...");
+
+// Requires users and polls server-side controllers for routing
 var users = require("../controllers/users");
 var polls = require("../controllers/polls");
+
+// Creates module of routes for exporting
 module.exports = function(app) {
     app.post("/users", function(req, res) {
         users.create(req, res);

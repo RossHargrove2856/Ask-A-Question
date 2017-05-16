@@ -1,24 +1,41 @@
 <div ng-controller="userController as UC" ng-init="PC.show()">
-    <a href="#!/polls">Go To Polls</a>
-    <h2>{{ PC.poll.question }}</h2>
-    <p>by {{ PC.poll.author.name }}</p>
-    <h5>Click the vote button to choose one</h5>
-    <table>
-        <thead>
-            <tr>
-                <th>Option</th>
-                <th>Current Votes</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr ng-repeat="options in PC.poll.options">
-                <td>{{ options.option }}</td>
-                <td>{{ options.vote }}</td>
-                <td>
-                    <button ng-click="PC.vote(options)">Vote</button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <nav>
+        <div class="nav-wrapper blue darken-3">
+            <a href="#" class="brand-logo">Ask-A-Question</a>
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+            <ul id="nav-mobile" class="right">
+                <li><a href="#!/polls">Dashboard</a></li>
+                <li><a ng-click="UC.logout()">Logout</a></li>
+            </ul>
+            <ul class="side-nav" id="mobile-demo">
+                <li><a href="#!/polls">Dashboard</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="card-panel grey lighten-3">
+            <h2>{{ PC.poll.question }}</h2>
+            <p>by {{ PC.poll.author.name }}</p>
+            <h5>Click the vote button to choose one</h5>
+            <table class="centered">
+                <thead>
+                    <tr>
+                        <th>Option</th>
+                        <th>Current Votes</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="options in PC.poll.options">
+                        <td>{{ options.option }}</td>
+                        <td>{{ options.vote }}</td>
+                        <td>
+                            <button ng-click="PC.vote(options)" class="waves-effect waves-light btn blue darken-3">Vote</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>

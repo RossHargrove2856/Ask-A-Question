@@ -1,8 +1,10 @@
 console.log("Loading poll controller...");
 
+// Requires monggose dependency and poll model
 var mongoose = require("mongoose");
 var Poll = mongoose.model("Poll");
 
+// Creates polls module to export functions
 module.exports = {
     index: function(req,res) {
         Poll.find({}).populate("author").exec(function(err,polls) {
