@@ -1,4 +1,6 @@
+<!-- Provides user controller becuase only the poll controller is pass in by the app -->
 <div ng-controller="userController as UC">
+    <!-- Navigation bar at the top of the page -->
     <nav>
         <div class="nav-wrapper blue darken-3">
             <a href="#" class="brand-logo">Ask-A-Question</a>
@@ -13,7 +15,9 @@
             </ul>
         </div>
     </nav>
+    <!-- Main content -->
     <div class="container">
+        <!-- Header and search form for the dashboard -->
         <div class="row card-panel grey lighten-3">
             <div class="col s5">
                 <h4 class="light">Current Polls</h4>
@@ -27,6 +31,7 @@
                 </form>
             </div>
         </div>
+        <!-- Table displaying all current polls -->
         <table class="centered card-panel grey lighten-3">
             <thead>
                 <tr>

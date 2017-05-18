@@ -1,5 +1,7 @@
 <div class="container">
+    <!-- Displays errors if anything went wrong during login or registration -->
     <p ng-if="UC.logged_errors">{{ UC.logged_errors }}</p>
+    <!-- Section and form for registering a new user -->
     <div class="card-panel grey lighten-3">
         <h2>Register</h2>
         <form ng-submit="UC.create(UC.newUser, UC.password_confirm)">
@@ -14,6 +16,7 @@
             <input type="submit" class="btn waves-effect waves-light blue darken-3" name="submit" value="Register">
         </form>
     </div>
+    <!-- Section and form for logging in an existing user -->
     <div class="card-panel grey lighten-3">
         <h2>Login</h2>
         <form ng-submit="UC.login(UC.loggedUser)">

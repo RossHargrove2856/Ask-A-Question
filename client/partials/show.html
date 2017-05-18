@@ -1,4 +1,6 @@
+<!-- Provides user controller becuase only the poll controller is pass in by the app -->
 <div ng-controller="userController as UC" ng-init="PC.show()">
+    <!-- Navigation bar at the top of the page -->
     <nav>
         <div class="nav-wrapper blue darken-3">
             <a href="#" class="brand-logo">Ask-A-Question</a>
@@ -13,11 +15,13 @@
             </ul>
         </div>
     </nav>
+    <!-- Section displaying the question and author -->
     <div class="container">
         <div class="card-panel grey lighten-3">
             <h2>{{ PC.poll.question }}</h2>
             <p>by {{ PC.poll.author.name }}</p>
             <h5>Click the vote button to choose one</h5>
+            <!-- Table displaying the options, vote count, and vote button -->
             <table class="centered">
                 <thead>
                     <tr>

@@ -1,26 +1,31 @@
 <!DOCTYPE html>
+<!-- Injects app module including all front end dependencies -->
 <html ng-app="app">
 <head>
     <meta charset="utf-8">
     <title>Ask-A-Question</title>
+    <!-- All required style sources -->
     <link rel="stylesheet" type="text/css" href="materialize/bin/materialize.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <script src="jquery/dist/jquery.js"></script>
     <script src="materialize/bin/materialize.js"></script>
+    <!-- All required routing, controllers, and factories -->
     <script src="angular/angular.js"></script>
     <script src="angular-route/angular-route.js"></script>
     <script src="angular-cookies/angular-cookies.min.js"></script>
     <script src="assets/config/app.js"></script>
-    <script src="assets/factories/userFactory.js"></script>
+    <script src="assets/factories/usersFactory.js"></script>
     <script src="assets/factories/pollsFactory.js"></script>
     <script src="assets/controllers/userController.js"></script>
     <script src="assets/controllers/pollController.js"></script>
+    <!-- Functional javascript for page interaction -->
     <script>
         $(document).ready(function(){
             $(".button-collapse").sideNav();
         })
     </script>
 </head>
+<!-- Establishes the view for partials -->
 <body ng-view="" class="grey lighten-1">
 
 </body>

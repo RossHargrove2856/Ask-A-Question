@@ -1,5 +1,7 @@
+// Stores front-end routing and cookies into a module
 var app = angular.module("app", ["ngRoute", "ngCookies"]);
 
+// Routing for partials and front-end controller
 app.config(function($routeProvider) {
     $routeProvider
     .when("/", {
