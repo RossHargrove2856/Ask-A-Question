@@ -15,6 +15,7 @@ app.controller("pollController", function(pollsFactory, $location, $routeParams,
     self.index();
     // Method to create new polls
     self.create = function(newPoll) {
+        console.log(newPoll);
         var addPoll = {};
         addPoll.author = $cookies.get("user_id");
         addPoll.question = newPoll.question;

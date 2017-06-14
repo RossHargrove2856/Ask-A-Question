@@ -12,7 +12,7 @@ app.factory("pollsFactory", ["$http", function($http) {
     }
     // Sends a request to create a new poll
     factory.create = function(addPoll, callback) {
-        $http.post("/polls", newPoll).then(callback);
+        $http.post("/polls", addPoll).then(callback);
     }
     // Sends a request to update the number of votes for an option in a poll
     factory.vote = function(option, id, callback) {
